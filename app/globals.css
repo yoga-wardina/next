@@ -2,20 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5);
+  /* Color of the thumb */
+  border-radius: 1px;
+  /* Rounded edges */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* Background of the scrollbar track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  /* "thin" for a smaller scrollbar */
+  scrollbar-color: rgba(99, 100, 100, 0.5) transparent;
+  /* Thumb color & track */
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  /* Width of the scrollbar */
+
+}
+
+html {
+  --jet: #313338;
+  --NavJet: #2b2d31;
+  --outerJet: #1e1f22;
+  --isabelline: #f4f0ec;
+  --coral: #ffd5ca;
+  --orange: #ff592b;
+  --yello: #ffde26;
+  --green: #777c88;
+  --hover-green: #45474e;
+  --content-height: calc(100vh - 48px);
+  --content-width: calc(100vw - 312px);
+}
+
+input:-webkit-autofill {
+  background-color: #1E1F22 !important;
+  /* Change to your desired color */
+  color: #B5BAC1 !important;
+  /* Ensure text color is readable */
+}
+
+input:-webkit-autofill:focus {
+  background-color: #1E1F22 !important;
+  /* Change to your desired color */
+  color: #B5BAC1 !important;
+  /* Ensure text color is readable */
+}
+
+input[type='text']:focus {
+  outline-width: 0px;
+  border: none;
+  box-shadow: 0px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  color: var(--isabelline);
+}
+
+.group-selector {
+  position: fixed;
+  width: 72px;
+  height: 100vh;
+  background-color: var(--outerJet);
+}
+
+.channel-selector {
+  position: fixed;
+  left: 72px;
+  width: 240px;
+  height: 100vh;
+  background-color: var(--NavJet);
+}
+
+.channel-header {
+  background-color: var(--jet);
+  position: absolute;
+  width: var(--content-width);
+  left: 312px;
+  height: 48px;
+}
+
+.channel-info {
+  background-color: var(--NavJet);
+  position: absolute;
+  width: 312px;
+  top: 48px;
+  float: right;
+  margin-left: auto;
+  right: 0px;
+  height: var(--content-height);
+}
+
+.content {
+  height: var(--content-height);
+  top: 48px;
+  left: 312px;
+  position: absolute;
+  width: var(--content-width);
+  background-color: var(--jet);
+}
+
+.colapse {
+  width: calc(100% - 312px - 312px);
 }
