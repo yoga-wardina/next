@@ -60,8 +60,8 @@ export const authStore = create(
 );
 
 type InputState = {
-    inputs: Record<string, string | boolean | number>;
-    setInputs: (name: string, value: string | number | boolean) => void;
+    inputs: Record<string, string | number>;
+    setInputs: (name: string, value: string | number) => void;
 };
 
 export const inputStore = create(
